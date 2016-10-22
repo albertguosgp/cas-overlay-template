@@ -9,6 +9,7 @@
     <version>1.0</version>
 
     <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>com.rimerosolutions.maven.plugins</groupId>
@@ -28,6 +29,7 @@
                             <excludes>
                                 <exclude>WEB-INF/cas.properties</exclude>
                                 <exclude>WEB-INF/classes/log4j2.xml</exclude>
+                                <exclude>WEB-INF/deployerConfigContext.xml</exclude>
                             </excludes>
                         </overlay>
                     </overlays>
@@ -76,6 +78,13 @@
             <type>war</type>
             <scope>runtime</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jasig.cas/cas-server-core -->
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-core</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+
     </dependencies>
 
     <properties>
